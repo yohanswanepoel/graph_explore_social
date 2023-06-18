@@ -3,8 +3,10 @@
 ## Purpose
 This repository is for me to learn more about graph databases and the power of exploring relationships between data elements using graph.
 
-## Project structure
+## Project structure & Assets
 * Sample data in ./sample_data
+* Assets: NeoDash dashboard file: dashboard.json
+* Assets: Instance Model graph_model.png, cyphermodel, Public Sector Social Graph.json
 * Cypher queries in util.py (using neomodel is probably simpler but there are some downsides in how labels are applied)
 * Imports done line by line using Cypber ... not what you would on production *apoc.load.csv* would be faster
 
