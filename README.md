@@ -49,7 +49,7 @@ podman run --arch=x86_64 -it --rm -p 5005:5005 neo4jlabs/neodash  2>&1 &
 * Transactions can almost be a date, year or month split out
 
 ### Model
-(graph_model.png?raw=true)
+![](graph_model.png?raw=true)
 
 
 ## Use Cases
