@@ -79,10 +79,10 @@ WHERE p1 <> p2
   AND r1.name = r2.name
   AND x1.from = x2.from
   AND x1.to = x2.to
-RETURN p1,p2,r1,c1, x1, y1
+RETURN *
 ```
-
-```cyper that same query for tabular view
+The query fit for a tabular view
+```cyper
 MATCH (p1:Student)-[x1:ENROLLED_IN]->(r1:Course)-[y1:AT_SCHOOL]->(c1:School)
 MATCH (p2:Student)-[x2:ENROLLED_IN]->(r2:Course)-[y2:AT_SCHOOL]->(c2:School)
 WHERE p1 <> p2
@@ -93,7 +93,50 @@ WHERE p1 <> p2
 RETURN DISTINCT p1.name,r1.name,c1.name, x1.from, x1.to
 ```
 
-* Overlapping trips
+#### Overlapping trips
+Starting broad first
+```cypher
+MATCH (p:Traveller)-[tx:TRAVELLED]->(t:Trip)-[tto:TRAVELLED_TO]->(c:Country) return p, t, c 
+```
+Now get more specific - overlapping countries - this is on the dashboard as well
+```cypher
+MATCH (p1:Traveller)-[tx1:TRAVELLED]->(t1:Trip)-[tto1:TRAVELLED_TO]->(c1:Country)
+MATCH (p2:Traveller)-[tx2:TRAVELLED]->(t2:Trip)-[tto2:TRAVELLED_TO]->(c2:Country)
+WHERE p1 <> p2
+  AND c1.name = c2.name
+RETURN p1,p2,tto1, c1, t1, t2, tx1, tx2
+```
+Now get really specific - overlapping dates
+```cypher
+MATCH (p1:Traveller)-[tx1:TRAVELLED]->(t1:Trip)-[tto1:TRAVELLED_TO]->(c1:Country)<-[tto2:TRAVELLED_TO]-(t2:Trip)<-[tx2:TRAVELLED]-(p2:Traveller)
+WHERE t1.arrivalDate = t2.arrivalDate
+  AND t1.departureDate = t2.departureDate
+RETURN p1,p2,tto1, c1, t1, t2, tx1, tx2
+```
+
+#### Transactions explore
+
+Overlapping spending - yep they certainly know each other and get together form time to time
+```cypher
+MATCH (p1:Person)-[crd1:HAS_CARD]->(z1:CreditCard)-[tx1:USED_AT]->(m1:Merchant)<-[tx2:USED_AT]-(z2:CreditCard)<-[crd2:HAS_CARD]-(p2:Person)
+WHERE p1 <> p2
+  AND tx1.transaction_date = tx2.transaction_date
+RETURN p1,p2,m1,crd1,crd2,z1,z2,tx1,tx2
+```
+
+#### Uber query for fun - match some travel, university and spending
+
+```cyper
+MATCH (p1:Person)-[crd1:HAS_CARD]->(z1:CreditCard)-[tx1:USED_AT]->(m1:Merchant)<-[tx2:USED_AT]-(z2:CreditCard)<-[crd2:HAS_CARD]-(p2:Person),
+ (p1:Traveller)-[tr1:TRAVELLED]->(t1:Trip)-[tto1:TRAVELLED_TO]->(c1:Country)<-[tto2:TRAVELLED_TO]-(t2:Trip)<-[tr2:TRAVELLED]-(p2:Traveller),
+ (p1:Student)-[x1:ATTENDED]->(s1:School)<-[x2:ATTENDED]-(p2:Student)
+WHERE p1 <> p2
+  AND tx1.transaction_date = tx2.transaction_date
+  AND (t1.arrivalDate = t2.arrivalDate AND t1.departureDate = t2.departureDate)
+RETURN *
+
+```
+
 * Transactions in a country while outside a country
 * Where does a person spend their money
 * Where does a person travel
@@ -113,3 +156,9 @@ Install requirements
 pip install -r requirements.txt
 ```
 
+## Bugs
+
+* There was an import bug that needed looking into = bug found wrong order in merge
+```cypher
+MATCH (n:CreditCard)-[tx:USED_AT]-(m:Merchant) where tx.transaction_date is null return n.nr,tx,m
+```

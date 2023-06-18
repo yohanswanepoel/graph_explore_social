@@ -99,6 +99,11 @@ class Import_Transactions:
         for i, j in df.iterrows():
             tx = self.driver.session()
             temp_tx_date = datetime.datetime.strptime(j.transactiondate, "%A, %d %B %Y")
+            if "HOTEL" in j.merchant:
+                print(j.merchant)
+                print(j.cardnumber)
+                print(temp_tx_date)
+                print(temp_tx_date.strftime("%Y-%m-%d"))
             result = tx.run(
                 """
                 MERGE (a:Country {name: $country})
@@ -107,8 +112,8 @@ class Import_Transactions:
                 MERGE (c:CreditCard {nr: $cardNumber})
                 MERGE (d:Organisation:Merchant {name: $merchant})
                 MERGE (b)-[:HAS_CARD]->(c)
-                MERGE (c)-[tx:USED_AT]->(d)
                 MERGE (d)-[:BASED_IN]->(a)
+                MERGE (c)-[tx:USED_AT]->(d)
                 ON CREATE SET tx.transaction_date=date($txDate), tx.amount=toFloat($amount)
                 """, 
                 country=j.country,

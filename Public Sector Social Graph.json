@@ -74,8 +74,8 @@
     {
       "id": "n1",
       "position": {
-        "x": -998.3591013505768,
-        "y": 55.92605348713795
+        "x": -992.007296330338,
+        "y": 55.926053487137835
       },
       "caption": "",
       "style": {
@@ -174,8 +174,8 @@
     {
       "id": "n7",
       "position": {
-        "x": -192.03197069730766,
-        "y": 656.0550515877204
+        "x": -373.61930911627366,
+        "y": 691.7771509488286
       },
       "caption": "Organisation",
       "style": {
@@ -482,7 +482,7 @@
     },
     {
       "id": "n33",
-      "type": "WENT_ON",
+      "type": "TRAVELLED",
       "style": {},
       "properties": {},
       "fromId": "n0",
@@ -490,7 +490,7 @@
     },
     {
       "id": "n34",
-      "type": "eo",
+      "type": "TRAVELLED_TO",
       "style": {},
       "properties": {},
       "fromId": "n13",
@@ -503,6 +503,14 @@
       "properties": {},
       "fromId": "n13",
       "toId": "n14"
+    },
+    {
+      "id": "n36",
+      "type": "BASED_IN",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n10"
     }
   ]
 }
