@@ -48,6 +48,10 @@ podman run --arch=x86_64 -it --rm -p 5005:5005 neo4jlabs/neodash  2>&1 &
 * Travelled model can be better, but that is heavily query and use case depended
 * Transactions can almost be a date, year or month split out
 
+### Model
+(graph_model.png?raw=true)
+
+
 ## Use Cases
 * Who might know how work and student overlap
 
@@ -126,7 +130,7 @@ RETURN p1,p2,m1,crd1,crd2,z1,z2,tx1,tx2
 
 #### Uber query for fun - match some travel, university and spending
 
-```cyper
+```cyhper
 MATCH (p1:Person)-[crd1:HAS_CARD]->(z1:CreditCard)-[tx1:USED_AT]->(m1:Merchant)<-[tx2:USED_AT]-(z2:CreditCard)<-[crd2:HAS_CARD]-(p2:Person),
  (p1:Traveller)-[tr1:TRAVELLED]->(t1:Trip)-[tto1:TRAVELLED_TO]->(c1:Country)<-[tto2:TRAVELLED_TO]-(t2:Trip)<-[tr2:TRAVELLED]-(p2:Traveller),
  (p1:Student)-[x1:ATTENDED]->(s1:School)<-[x2:ATTENDED]-(p2:Student)
@@ -136,12 +140,6 @@ WHERE p1 <> p2
 RETURN *
 
 ```
-
-* Transactions in a country while outside a country
-* Where does a person spend their money
-* Where does a person travel
-
-
 
 ## Running Python App
 
