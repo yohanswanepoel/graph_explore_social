@@ -1,0 +1,508 @@
+{
+  "style": {
+    "font-family": "Nunito Sans",
+    "background-color": "#F2F2F2",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#4C8EDA",
+    "border-width": 0,
+    "border-color": "#000000",
+    "radius": 75,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#ffffff",
+    "caption-font-size": 20,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "bare",
+    "label-color": "#ffffff",
+    "label-background-color": "#848484",
+    "label-border-color": "#848484",
+    "label-border-width": 3,
+    "label-font-size": 20,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "above",
+    "detail-orientation": "parallel",
+    "arrow-width": 3,
+    "arrow-color": "#848484",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#848484",
+    "type-background-color": "#F2F2F2",
+    "type-border-color": "#848484",
+    "type-border-width": 0,
+    "type-font-size": 21,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#848484",
+    "property-font-size": 20,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": -631.4375791819566,
+        "y": -304.64366366124364
+      },
+      "caption": "",
+      "labels": [
+        "Employee",
+        "Student",
+        "Person"
+      ],
+      "properties": {
+        "name": "Ariff Johan",
+        "passport": "ABC1234DEF"
+      },
+      "style": {}
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": -998.3591013505768,
+        "y": 55.92605348713795
+      },
+      "caption": "",
+      "style": {
+        "node-color": "#fe9200"
+      },
+      "labels": [
+        "Country"
+      ],
+      "properties": {
+        "name": "Singapore"
+      }
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": 444.83358927007873,
+        "y": -449.0238889183525
+      },
+      "caption": "Organisation",
+      "style": {
+        "node-color": "#68ccca"
+      },
+      "labels": [
+        "Employer"
+      ],
+      "properties": {
+        "name": "Moon Microsystems "
+      }
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": -229.1349290550881,
+        "y": -778.2544270909059
+      },
+      "caption": "",
+      "style": {
+        "node-color": "#16a5a5"
+      },
+      "labels": [
+        "Role"
+      ],
+      "properties": {
+        "name": "Vice President Global Marketing"
+      }
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": -69.22946551004415,
+        "y": -449.0238889183525
+      },
+      "caption": "Course",
+      "style": {
+        "node-color": "#0c797d"
+      },
+      "labels": [],
+      "properties": {
+        "name": "Primary School Leaving Examination"
+      }
+    },
+    {
+      "id": "n5",
+      "position": {
+        "x": -901.6271436032789,
+        "y": 539.3471907607667
+      },
+      "caption": "",
+      "style": {
+        "node-color": "#aea1ff"
+      },
+      "labels": [
+        "Creditcard"
+      ],
+      "properties": {
+        "cardNumber": "2345-6789-1011 -1213-1415"
+      }
+    },
+    {
+      "id": "n6",
+      "position": {
+        "x": 686.4688201292721,
+        "y": -169.74706644364213
+      },
+      "caption": "Organisation",
+      "style": {
+        "node-color": "#68ccca"
+      },
+      "labels": [
+        "School"
+      ],
+      "properties": {
+        "name": "Bukit Panjang Primary School"
+      }
+    },
+    {
+      "id": "n7",
+      "position": {
+        "x": -192.03197069730766,
+        "y": 656.0550515877204
+      },
+      "caption": "Organisation",
+      "style": {
+        "node-color": "#68ccca"
+      },
+      "labels": [
+        "Merchant"
+      ],
+      "properties": {
+        "name": "5 SENSES BISTRO, SINGAPORE"
+      }
+    },
+    {
+      "id": "n8",
+      "position": {
+        "x": 444.83358927007873,
+        "y": 55.92605348713795
+      },
+      "caption": "Organisation",
+      "style": {
+        "node-color": "#68ccca"
+      },
+      "labels": [
+        "School"
+      ],
+      "properties": {
+        "name": "Bukit Panjang Primary School"
+      }
+    },
+    {
+      "id": "n9",
+      "position": {
+        "x": -192.03197069730766,
+        "y": 134.76194482340543
+      },
+      "caption": "Course",
+      "style": {
+        "node-color": "#0c797d"
+      },
+      "labels": [],
+      "properties": {
+        "name": "General Certificate of Education Ordinary Level"
+      }
+    },
+    {
+      "id": "n10",
+      "position": {
+        "x": 28.45302609457417,
+        "y": 799.1474551843908
+      },
+      "caption": "",
+      "style": {
+        "node-color": "#fe9200"
+      },
+      "labels": [
+        "Country"
+      ],
+      "properties": {
+        "name": "Vietnam"
+      }
+    },
+    {
+      "id": "n11",
+      "position": {
+        "x": 444.83358927007873,
+        "y": 344.9500748848815
+      },
+      "caption": "Organisation",
+      "style": {
+        "node-color": "#68ccca"
+      },
+      "labels": [
+        "School"
+      ],
+      "properties": {
+        "name": "Bukit Panjang Primary School"
+      }
+    },
+    {
+      "id": "n12",
+      "position": {
+        "x": -192.03197069730766,
+        "y": 395.4084982055629
+      },
+      "caption": "Course",
+      "style": {
+        "node-color": "#0c797d"
+      },
+      "labels": [],
+      "properties": {
+        "name": "Bachelor of Business Administration"
+      }
+    },
+    {
+      "id": "n13",
+      "position": {
+        "x": -1270.6837709761019,
+        "y": -307.28596719094503
+      },
+      "caption": "Trip",
+      "style": {
+        "node-color": "#fda1ff"
+      },
+      "labels": [],
+      "properties": {
+        "departureDate": "Thursday, 12 April 2018",
+        "arrivalDate": "Thursday, 12 April 2018"
+      }
+    },
+    {
+      "id": "n14",
+      "position": {
+        "x": -948.0064973666601,
+        "y": -567.3834148825935
+      },
+      "caption": "",
+      "style": {
+        "node-color": "#fe9200"
+      },
+      "labels": [
+        "Country"
+      ],
+      "properties": {
+        "name": "Hawaii"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "type": "CITIZEN_OF",
+      "style": {},
+      "properties": {},
+      "fromId": "n0",
+      "toId": "n1"
+    },
+    {
+      "id": "n2",
+      "type": "EMPLOYED_BY",
+      "style": {},
+      "properties": {},
+      "fromId": "n0",
+      "toId": "n2"
+    },
+    {
+      "id": "n3",
+      "type": "WORKED_AS",
+      "style": {},
+      "properties": {
+        "from": "1996",
+        "to": "2010"
+      },
+      "fromId": "n0",
+      "toId": "n3"
+    },
+    {
+      "id": "n4",
+      "type": "AT_COMPANY",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n2"
+    },
+    {
+      "id": "n5",
+      "type": "ENROLLED_IN",
+      "style": {},
+      "properties": {
+        "from": "1978",
+        "to": "1983"
+      },
+      "fromId": "n0",
+      "toId": "n4"
+    },
+    {
+      "id": "n7",
+      "type": "HAS_CARD",
+      "style": {},
+      "properties": {},
+      "fromId": "n0",
+      "toId": "n5"
+    },
+    {
+      "id": "n9",
+      "type": "ATTENDED",
+      "fromId": "n0",
+      "toId": "n6",
+      "style": {},
+      "properties": {
+        "from": "1978",
+        "to": "1983"
+      }
+    },
+    {
+      "id": "n12",
+      "type": "AT_SCHOOL",
+      "fromId": "n4",
+      "toId": "n6",
+      "style": {},
+      "properties": {}
+    },
+    {
+      "id": "n18",
+      "type": "USED_AT",
+      "fromId": "n5",
+      "toId": "n7",
+      "style": {},
+      "properties": {
+        "ammount": "$40.35",
+        "transaction_date": "Friday, 3 September 2021"
+      }
+    },
+    {
+      "id": "n19",
+      "type": "ATTENDED",
+      "fromId": "n0",
+      "toId": "n8",
+      "style": {},
+      "properties": {
+        "from": "1984",
+        "to": "1987"
+      }
+    },
+    {
+      "id": "n21",
+      "type": "ENROLLED_IN",
+      "fromId": "n0",
+      "toId": "n9",
+      "style": {},
+      "properties": {
+        "from": "1984",
+        "to": "1987"
+      }
+    },
+    {
+      "id": "n23",
+      "type": "AT_SCHOOL",
+      "fromId": "n9",
+      "toId": "n8",
+      "style": {},
+      "properties": {}
+    },
+    {
+      "id": "n24",
+      "type": "BASED_IN",
+      "style": {},
+      "properties": {},
+      "fromId": "n8",
+      "toId": "n1"
+    },
+    {
+      "id": "n25",
+      "type": "BASED_IN",
+      "style": {},
+      "properties": {},
+      "fromId": "n6",
+      "toId": "n1"
+    },
+    {
+      "id": "n26",
+      "type": "BASED_IN",
+      "style": {},
+      "properties": {},
+      "fromId": "n2",
+      "toId": "n1"
+    },
+    {
+      "id": "n27",
+      "type": "ATTENDED",
+      "fromId": "n0",
+      "toId": "n11",
+      "style": {},
+      "properties": {
+        "from": "1992",
+        "to": "1995"
+      }
+    },
+    {
+      "id": "n29",
+      "type": "BASED_IN",
+      "fromId": "n11",
+      "toId": "n10",
+      "style": {},
+      "properties": {}
+    },
+    {
+      "id": "n30",
+      "type": "ENROLLED_IN",
+      "fromId": "n0",
+      "toId": "n12",
+      "style": {},
+      "properties": {
+        "from": "1992",
+        "to": "1995"
+      }
+    },
+    {
+      "id": "n32",
+      "type": "AT_SCHOOL",
+      "fromId": "n12",
+      "toId": "n11",
+      "style": {},
+      "properties": {}
+    },
+    {
+      "id": "n33",
+      "type": "WENT_ON",
+      "style": {},
+      "properties": {},
+      "fromId": "n0",
+      "toId": "n13"
+    },
+    {
+      "id": "n34",
+      "type": "eo",
+      "style": {},
+      "properties": {},
+      "fromId": "n13",
+      "toId": "n1"
+    },
+    {
+      "id": "n35",
+      "type": "TRAVELLED_TO",
+      "style": {},
+      "properties": {},
+      "fromId": "n13",
+      "toId": "n14"
+    }
+  ]
+}
