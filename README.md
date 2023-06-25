@@ -31,14 +31,11 @@ podman run \
     --publish=7474:7474 --publish=7687:7687 \
     --env NEO4J_ACCEPT_LICENSE_AGREEMENT=yes \
     --env NEO4J_AUTH=neo4j/Pick_4_Good_Password \
-    --volume=temp/ndata:/data \
-    --volume=temp/nlogs:/logs \
-    neo4j:5.9.0-enterprise \ 
-    2>&1 & 
-
+    --env NEO4J_PLUGINS='["graph-data-science"]' \
+    neo4j:5.9.0-enterprise
 ```
-
-Crate container for Neodash
+    
+Create container for Neodash
 ```bash
 podman run --arch=x86_64 -it --rm -p 5005:5005 neo4jlabs/neodash  2>&1 & 
 ```
