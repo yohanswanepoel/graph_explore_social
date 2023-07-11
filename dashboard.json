@@ -2,22 +2,22 @@
   "title": "",
   "version": "2.2",
   "settings": {
-    "pagenumber": 0,
+    "pagenumber": 3,
     "editable": true,
     "fullscreenEnabled": false,
     "parameters": {}
   },
   "pages": [
     {
-      "title": "Main Page",
+      "title": "Work and spending",
       "reports": [
         {
           "title": "Transaction Spending by day",
-          "query": "MATCH (p:Person)-[:HAS_CARD]->(n:CreditCard)-[tx:USED_AT]->(m:Merchant) return tx.transaction_date,sum(tx.amount)",
-          "width": 6,
+          "query": "MATCH (p:Person)-[:HAS_CARD]->(n:CreditCard)-[tx:USED_AT]->(m:Merchant) \nWHERE p.name = \"Ariff Johan\"\nreturn tx.transaction_date,sum(tx.amount)",
+          "width": 9,
           "height": 2,
           "x": 0,
-          "y": 7,
+          "y": 3,
           "type": "bar",
           "selection": {
             "index": "tx.transaction_date",
@@ -29,7 +29,7 @@
         {
           "title": "Work Relationships",
           "query": "\nMATCH (p:Employee)-[x:WORKED_AS]->(r:Role)-[z:AT_COMPANY]->(c:Employer) return p,c,r,z,x\n",
-          "width": 5,
+          "width": 12,
           "height": 3,
           "x": 0,
           "y": 0,
@@ -47,13 +47,18 @@
             "enableEditing": true,
             "rightClickToExpandNodes": true
           }
-        },
+        }
+      ]
+    },
+    {
+      "title": "Education",
+      "reports": [
         {
           "title": "Education Relationships",
           "query": "MATCH (p:Student)-[x:ENROLLED_IN]->(r:Course)-[y:AT_SCHOOL]->(c:School) return p,r,c,x,y\n",
-          "width": 7,
+          "width": 12,
           "height": 3,
-          "x": 5,
+          "x": 0,
           "y": 0,
           "type": "graph",
           "selection": {
@@ -89,7 +94,7 @@
           "width": 5,
           "height": 2,
           "x": 0,
-          "y": 3,
+          "y": 5,
           "type": "graph",
           "selection": {
             "Person": "name",
@@ -104,14 +109,19 @@
             "enableEditing": true,
             "rightClickToExpandNodes": true
           }
-        },
+        }
+      ]
+    },
+    {
+      "title": "Travel",
+      "reports": [
         {
           "title": "Overlapping Hotel Stays",
           "query": "MATCH (p1:Person)-[crd1:HAS_CARD]->(z1:CreditCard)-[tx1:USED_AT]->(m1:Merchant)<-[tx2:USED_AT]-(z2:CreditCard)<-[crd2:HAS_CARD]-(p2:Person)\nWHERE p1 <> p2\n  AND tx1.transaction_date = tx2.transaction_date\nRETURN p1,p2,m1,crd1,crd2,z1,z2,tx1,tx2",
-          "width": 6,
-          "height": 2,
-          "x": 6,
-          "y": 5,
+          "width": 12,
+          "height": 3,
+          "x": 0,
+          "y": 0,
           "type": "graph",
           "selection": {
             "Person": "name",
@@ -120,17 +130,24 @@
             "Traveller": "name",
             "Organisation": "name",
             "Merchant": "name",
-            "CreditCard": "(label)"
+            "CreditCard": "(label)",
+            "Trip": "name",
+            "Country": "name"
           },
           "settings": {}
-        },
+        }
+      ]
+    },
+    {
+      "title": "General Overlapping ",
+      "reports": [
         {
-          "title": "Overlapping things",
-          "query": "\nMATCH (p1:Person)-[crd1:HAS_CARD]->(z1:CreditCard)-[tx1:USED_AT]->(m1:Merchant)<-[tx2:USED_AT]-(z2:CreditCard)<-[crd2:HAS_CARD]-(p2:Person),\n (p1:Traveller)-[tr1:TRAVELLED]->(t1:Trip)-[tto1:TRAVELLED_TO]->(c1:Country)<-[tto2:TRAVELLED_TO]-(t2:Trip)<-[tr2:TRAVELLED]-(p2:Traveller),\n (p1:Student)-[x1:ATTENDED]->(s1:School)<-[x2:ATTENDED]-(p2:Student)\nWHERE p1 <> p2\n  AND tx1.transaction_date = tx2.transaction_date\n  AND (t1.arrivalDate = t2.arrivalDate AND t1.departureDate = t2.departureDate)\nRETURN *\n\n",
-          "width": 6,
-          "height": 2,
-          "x": 6,
-          "y": 7,
+          "title": "Looking for relationships",
+          "query": "\n MATCH (p1:Person)-[crd1:HAS_CARD]->(z1:CreditCard)-[tx1:USED_AT]->(m1:Merchant)<-[tx2:USED_AT]-(z2:CreditCard)<-[crd2:HAS_CARD]-(p2:Person),  (p1:Traveller)-[tr1:TRAVELLED]->(t1:Trip)-[tto1:TRAVELLED_TO]->(c1:Country)<-[tto2:TRAVELLED_TO]-(t2:Trip)<-[tr2:TRAVELLED]-(p2:Traveller),  (p1:Student)-[x1:ATTENDED]->(s1:School)<-[x2:ATTENDED]-(p2:Student) WHERE p1 <> p2   AND tx1.transaction_date = tx2.transaction_date   AND (t1.arrivalDate = t2.arrivalDate AND t1.departureDate = t2.departureDate) RETURN *\n\n",
+          "width": 12,
+          "height": 4,
+          "x": 0,
+          "y": 0,
           "type": "graph",
           "selection": {
             "Country": "name",
@@ -142,7 +159,8 @@
             "Traveller": "name",
             "School": "name",
             "Trip": "name",
-            "CreditCard": "(label)"
+            "CreditCard": "(label)",
+            "Course": "name"
           },
           "settings": {}
         }
